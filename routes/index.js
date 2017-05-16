@@ -23,7 +23,7 @@ router.post('/email', (req, res) => {
   	text: 'Hola'
   };
 
-  transporter.sendEmail(mail, (error, info) => {
+  transporter.sendMail(mail, (error, info) => {
     if (error) {
     	return console.log(error);
     }
