@@ -25,9 +25,9 @@ router.post('/email', (req, res) => {
 
   transporter.sendMail(mail, (error, info) => {
     if (error) {
-    	return console.log(error);
+    	return res.send(error);
     }
-    return console.log(info);
+    return res.send(info);
   });
 });
 
