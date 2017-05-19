@@ -3,10 +3,10 @@ var router = express.Router();
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-	service: 'gmail',
+	service: 'hotmail',
 	auth: {
-		user: 'agronacional1@gmail.com', 
-		pass: 'agronacionaldelcentro'
+		user: 'agronacionaldelcentro@hotmail.com', 
+		pass: 'Vcesar04!'
 	}
 });
 
