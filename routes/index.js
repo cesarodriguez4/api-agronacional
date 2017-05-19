@@ -5,8 +5,8 @@ const nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'soporteviantti@gmail.com',
-    pass: 'Viantti2017'
+    user: 'soporteagronacional@gmail.com',
+    pass: 'agronacionaldelcentro'
   }
 });
 
@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
 
 router.post('/email', (req, res) => {
   let mail = {
-  	from: 'agronacional@gmail.com', 
+  	from: 'soporteagronacional@gmail.com', 
   	to: req.body.email, 
   	subject: 'Ticket', 
   	text: 'Hola'
