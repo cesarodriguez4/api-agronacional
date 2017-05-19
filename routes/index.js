@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
 
 router.post('/email', (req, res) => {
   let mail = {
-  	from: 'soporteviantti@gmail.com', 
+  	from: 'agronacional@gmail.com', 
   	to: req.body.email, 
   	subject: 'Ticket', 
   	text: 'Hola'
