@@ -3,11 +3,11 @@ var router = express.Router();
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-	service: 'hotmail',
-	auth: {
-		user: 'agronacionaldelcentro@hotmail.com', 
-		pass: 'Vcesar04!'
-	}
+  service: 'gmail',
+  auth: {
+    user: 'soporteviantti@gmail.com',
+    pass: 'Viantti2017'
+  }
 });
 
 transporter.verify( (error, success) => {
@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
 
 router.post('/email', (req, res) => {
   let mail = {
-  	from: 'cesarodriguez4@gmail.com', 
+  	from: 'soporteviantti@gmail.com', 
   	to: req.body.email, 
   	subject: 'Ticket', 
   	text: 'Hola'
