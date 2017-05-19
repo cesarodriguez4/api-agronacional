@@ -29,7 +29,7 @@ router.post('/email', (req, res) => {
   	from: 'soporteagronacional@gmail.com', 
   	to: req.body.email, 
   	subject: 'Ticket', 
-  	text: 'Hola'
+  	text: '<3Maldita sea por que eres tan bella<3'
   };
 
   transporter.sendMail(mail, (error, info) => {
