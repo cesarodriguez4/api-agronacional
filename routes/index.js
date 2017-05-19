@@ -3,11 +3,11 @@ var router = express.Router();
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-	service: 'hotmail',
-	auth: {
-		user: 'agronacionaldelcentro@hotmail.com', 
-		pass: 'Vcesar04!'
-	}
+  service: 'gmail',
+  auth: {
+    user: 'soporteviantti@gmail.com',
+    pass: 'Viantti2017'
+  }
 });
 
 transporter.verify( (error, success) => {
