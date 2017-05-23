@@ -12,20 +12,22 @@ var cors = require('cors');
 var app = express();
 let mysql = require('mysql');
 
-/*let connection = mysql.createConnection({
+let connection = mysql.createConnection({
   host     : 'r4919aobtbi97j46.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user     : 'zdcma94va8d2tju4',
   password : 'ppgo1jy12365hkbj',
   database : 't2al6eofj951eq4b'
 });
-*/
 
+
+/*
 let connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
   database : 'USUARIOS'
 });
+*/
 
 connection.connect(function(error) {
   if(error) {
