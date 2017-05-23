@@ -9,8 +9,31 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var cors = require('cors');
-
 var app = express();
+let mysql = require('mysql');
+
+/*let connection = mysql.createConnection({
+  host     : 'r4919aobtbi97j46.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user     : 'zdcma94va8d2tju4',
+  password : 'ppgo1jy12365hkbj',
+  database : 't2al6eofj951eq4b'
+});
+*/
+
+let connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'USUARIOS'
+});
+
+connection.connect(function(error) {
+  if(error) {
+    console.log(error);
+  } else {
+    console.log('Conectado Exitosamente');
+  }
+}); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+require('./routes/login')(app, connection);
 
 app.use(cors());
 /// catch 404 and forwarding to error handler
@@ -33,6 +57,8 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
+
 
 /// error handlers
 
