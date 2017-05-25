@@ -53,8 +53,13 @@ app.use('/users', users);
 require('./routes/login')(app, connection);
 
 app.use(cors());
-cors({credentials: true, origin: true});
 app.options('*', cors());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
