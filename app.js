@@ -53,7 +53,9 @@ app.use('/users', users);
 require('./routes/login')(app, connection);
 
 app.use(cors());
+cors({credentials: true, origin: true});
 app.options('*', cors());
+
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
